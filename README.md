@@ -1,2 +1,2 @@
-# factory-method-node
+# Factory Method
 Factory method example using NodeJS
