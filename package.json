@@ -1,0 +1,23 @@
+{
+  "name": "factory-method-node",
+  "version": "1.0.0",
+  "description": "Factory method example using NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rgalicia0729/factory-method-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rgalicia0729/factory-method-node/issues"
+  },
+  "homepage": "https://github.com/rgalicia0729/factory-method-node#readme",
+  "dependencies": {
+    "ts-node": "^10.7.0"
+  }
+}
