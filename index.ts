@@ -1,44 +1,22 @@
-interface Connection {
-  connect(): string;
+import { FigureFactory } from './src/figure_factory';
+import { SquareFactory } from './src/square';
+import { RectangleFactory } from './src/rectangle';
+
+const showResult = (figure: FigureFactory) => {
+  const result = `
+    Area: ${figure.getArea()}
+    Perimetro: ${figure.getPerimeter()}
+  `
+
+  console.log(result);
 }
 
-class PostgreSQL implements Connection {
-  public connect(): string {
-    return 'Connected to PostgreSQL';
-  }
-}
+const square = new SquareFactory(5);
+console.log('Datos del Cuadrado');
+showResult(square);
 
-class MySql implements Connection {
-  public connect(): string {
-    return 'Connected to MySQL';
-  }
-}
+console.log('-----------------------------\n');
 
-abstract class CreateConnection {
-  public abstract getConnection(): Connection;
-
-  public seeConnection(): string {
-    const connection = this.getConnection();
-
-    return connection.connect();
-  }
-}
-
-class ConnectToPostgreSQL extends CreateConnection {
-  public getConnection(): Connection {
-    return new PostgreSQL();
-  }
-}
-
-class ConnectToMySql extends CreateConnection {
-  public getConnection(): Connection {
-    return new MySql();
-  }
-}
-
-const clientCode = (createConnection: CreateConnection) => {
-  console.log(createConnection.seeConnection());
-}
-
-clientCode(new ConnectToPostgreSQL());
-clientCode(new ConnectToMySql());
+const rectangle = new RectangleFactory(8, 5);
+console.log('Datos del Rectangulo');
+showResult(rectangle);
